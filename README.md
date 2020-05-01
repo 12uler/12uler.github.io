@@ -1,2 +1,3 @@
-# 12uler.github.io
-Website Project Host
+# Project 0
+
+Web Programming with Python and JavaScript
