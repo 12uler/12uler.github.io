@@ -1,0 +1,31 @@
+
+<html>
+
+<head>
+
+<link rel="stylesheet" href="style.css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+</head>
+
+<body>
+
+<title id="title">JSON pracice</title>
+
+<h4>Market Sentiment Analysis</h4>
+
+<h5>None of this content represents me or my opinions.  Sourced from the 4chan api. https://a.4cdn.org/biz/10.json</h5>
+
+<h5>Method: Pull JSON from 4chan and filter comments for keywords indicating positive or negative feelings toward current market trends. </h5>
+
+<div id="graphContainer">
+	<canvas id="graph"></canvas>
+</div>
+
+<div class="comments" id="comments"></div>
+
+</body>
+
+</html>
