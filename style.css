@@ -15,7 +15,6 @@ html {
   box-shadow: 0 0 5px #000;
   font-family: 'Nerko One', cursive;
   font-size: 22px;
-  z-index: 1;
 }
 #navbar a {
   float: left;
