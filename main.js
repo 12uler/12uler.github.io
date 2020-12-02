@@ -36,6 +36,7 @@ console.log(posComments.length);
 console.log(negComments.length);
 //document.getElementById('comments').innerHTML = negComments;
  
+ 
       //Positive or Negative? 
     if(posData>negData){
      return $('#result').text("Positive Sentiment Detected"),
@@ -47,6 +48,7 @@ console.log(negComments.length);
      return $('#result').text("No Change"),
       $('#result').css("background-color", "gray");;
     }
+ 
  
  //build the graph
 var sentimentChart = new Chart(ctx, {
