@@ -65,10 +65,10 @@ var sentimentChart = new Chart(ctx, {
 
       //Positive or Negative? 
     if(posData>negData){
-     return $('#result').text("Positive Sentiment Detected"),
+     return $('#result').text("Positive Sentiment"),
      $('#result').css("background-color", "green");
     } else if (negData > posData){
-     return $('#result').text("Negative Sentiment Detected"),
+     return $('#result').text("Negative Sentiment"),
       $('#result').css("background-color", "red");
     } else {
      return $('#result').text("No Change"),
