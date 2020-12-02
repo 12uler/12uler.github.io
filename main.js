@@ -35,9 +35,21 @@ var negData = negComments.length;
 console.log(posComments.length);
 console.log(negComments.length);
 //document.getElementById('comments').innerHTML = negComments;
-  
+ 
+      //Positive or Negative? 
+    if(posData>negData){
+     return $('#result').text("Positive Sentiment Detected"),
+     $('#result').css("background-color", "green");
+    } else if (negData > posData){
+     return $('#result').text("Negative Sentiment Detected"),
+      $('#result').css("background-color", "red");
+    } else {
+     return $('#result').text("No Change"),
+      $('#result').css("background-color", "gray");;
+    }
+ 
  //build the graph
- var sentimentChart = new Chart(ctx, {
+var sentimentChart = new Chart(ctx, {
   type: 'bar',
   responsive: true,
   barValueSpacing: 2,
