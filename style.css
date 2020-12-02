@@ -1,0 +1,188 @@
+@import 'https://fonts.googleapis.com/css2?family=Nerko+One&display=swap';
+html {
+  background: #c4ba9d;
+}
+#container {
+  height: 120vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+#navbar {
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #add8e6;
+  box-shadow: 0 0 5px #000;
+  font-family: 'Nerko One', cursive;
+  font-size: 22px;
+}
+#navbar a {
+  float: left;
+  display: block;
+  color: #008000;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+#footbar {
+  height: 50px;
+  width: 98.5%;
+  bottom: 0;
+  position: fixed;
+  overflow: hidden;
+  background-color: #add8e6;
+  box-shadow: 0 0 5px #000;
+  font-size: 22px;
+  font-family: 'Nerko One', cursive;
+}
+#footbar a {
+  float: left;
+  display: block;
+  color: #008000;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+#title {
+  height: 10vh;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-family: 'Nerko One', cursive;
+}
+#about {
+  height: 10vh;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 3vw;
+  text-align: center;
+  font-family: 'Nerko One', cursive;
+}
+#message {
+  height: 5vh;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 3vw;
+  font-size: 30px;
+  font-family: 'Nerko One', cursive;
+}
+#projects {
+  height: 50vh;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.project {
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+  margin-top: 4vw;
+  padding: 5px;
+  position: relative;
+  background-color: #add8e6;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 10%;
+  box-shadow: 0 5px 10px #000;
+}
+.project:hover {
+  animation: enlarge 1s forwards;
+}
+.projectTitle {
+  height: 3vw;
+  width: 20vw;
+  font-size: 15px;
+  text-align: center;
+  background: transparent;
+}
+#project1 {
+  background-image: url("https://assets.codepen.io/4332848/CryptoSentiment.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#project2 {
+  background-image: url("https://assets.codepen.io/4332848/CSS_Spheres.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#project3 {
+  background-image: url("https://assets.codepen.io/4332848/birthdayCard.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#project4 {
+  background-image: url("https://assets.codepen.io/4332848/3dPhotoDemo.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#objectives {
+  height: 20vw;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid #000;
+}
+#contact {
+  height: 5vw;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid #000;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .container {
+  padding-top: 60px;
+}
+#navbar a:hover {
+  background-color: #fcba03;
+  animation: enlarge 1s forwards;
+}
+@-moz-keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+    border-radius: 50%;
+  }
+}
+@-webkit-keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+    border-radius: 50%;
+  }
+}
+@-o-keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+    border-radius: 50%;
+  }
+}
+@keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+    border-radius: 50%;
+  }
+}
