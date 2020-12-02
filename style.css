@@ -89,6 +89,7 @@ html {
   font-size: 15px;
   border-radius: 10%;
   box-shadow: 0 5px 10px #000;
+  z-index: -1;
 }
 .project:hover {
   animation: enlarge 1s forwards;
