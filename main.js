@@ -46,7 +46,6 @@ var posComments = comments.filter(checkPos),
 console.log(posComments.length);
 console.log(negComments.length);
  
-//document.getElementById('comments').innerHTML = negComments;
 //build the graph
     
  var chart = new Chart(ctx, {
@@ -90,6 +89,7 @@ if(posData>negData){
  
 }); //JSON sort function end 
     
+//Dispaly active dictionaries on page
 $('#posDict').text(posDict);
 $('#negDict').text(negDict);    
  console.log(posDict);
