@@ -84,7 +84,7 @@ if(posData>negData){
     return $('#result').text("Negative Sentiment"),
      $('#result').css("background-color", "tomato");
   } else {
-    return $('#result').text("No Change"),
+    return $('#result').text("Neutral"),
      $('#result').css("background-color", "gray");;
   }  
  
