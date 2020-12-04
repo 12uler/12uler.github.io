@@ -70,7 +70,8 @@ console.log(negComments.length);
              suggestedMax: 80
          }
        }]
-     }
+     },
+     maintainAspectRatio: false
    }
 }); 
 
