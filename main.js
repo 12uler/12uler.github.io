@@ -79,10 +79,10 @@ console.log(negComments.length);
     
 if(posData>negData){
     return $('#result').text("Positive Sentiment"),
-    $('#result').css("background-color", "green");
+    $('#result').css("background-color", "#56e31e");
   } else if (negData > posData){
     return $('#result').text("Negative Sentiment"),
-     $('#result').css("background-color", "red");
+     $('#result').css("background-color", "tomato");
   } else {
     return $('#result').text("No Change"),
      $('#result').css("background-color", "gray");;
