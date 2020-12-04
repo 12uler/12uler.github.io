@@ -2,8 +2,12 @@
 
 /* general declarations*/
 body {
-  background: #1ec9e3;
   width: 110%;
+  background: url('robert-ritchie-iUnebsZ6GZg-unsplash.jpg');
+  width: 110%;
+  background-size: 100%;
+  background-position: center;
+  background-attachment: fixed;	
 }
 
 /*Title area*/
@@ -20,6 +24,7 @@ body {
   margin: 0 auto;
   margin-top: 20px;
   font-size: 25px;
+  color: lightblue;
   font-family: 'Roboto Slab', serif;
 }
 
@@ -118,6 +123,7 @@ body {
   margin-top: 30px;
   font-size: 25px;
   text-align: center;
+  color: lightblue;
   font-family: 'Roboto Slab', serif;
 }
 #posDict {
