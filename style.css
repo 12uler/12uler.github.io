@@ -1,171 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-
-/* general declarations*/
-body {
-  background: #1ec9e3;
-  width: 110%;
+@import 'https://fonts.googleapis.com/css2?family=Nerko+One&display=swap';
+html {
+  background: #343b3b;
 }
-
-/*Title area*/
-#disclaimer {
-  height: 25px;
-  width: 300px;
-  font-size: 10px;
+canvas {
+  width: 100%;
+  height: 60%;
+  margin-top: 100px;
+}
+#fish {
+  color: #000;
+  float: right;
+  padding: 15px;
+  width: 30px;
+}
+#container {
+  height: 120vh;
+  width: 100vw;
   margin: 0 auto;
-  font-family: 'Roboto Slab', serif;
+}
+#navbar {
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #9bb0b0;
+  box-shadow: 0 0 5px #000;
+  font-family: 'Nerko One', cursive;
+  font-size: 22px;
+  opacity: 0.8;
+}
+#navbar a {
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+#footbar {
+  height: 50px;
+  width: 98.5%;
+  bottom: 0;
+  position: fixed;
+  overflow: hidden;
+  background-color: #9bb0b0;
+  box-shadow: 0 0 5px #000;
+  font-size: 22px;
+  font-family: 'Nerko One', cursive;
+  opacity: 0.9;
+}
+#footbar a {
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
 }
 #title {
-  height: 50px;
-  width: 300px;
+  height: 10vh;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-family: 'Nerko One', cursive;
+}
+#about {
+  height: 10vh;
+  width: 80vw;
   margin: 0 auto;
   margin-top: 20px;
-  font-size: 25px;
-  font-family: 'Roboto Slab', serif;
-}
-
-
-/*Sidebar Elements*/
-.sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top:0;
-  left:0;
-  background-color: lightblue;
-  overflow-x: hidden;
-  padding-top: 20px;
-  box-shadow: 0 0 10px black;
-  font-family: 'Roboto Slab', serif;
-}
-.sidenav a{
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: gray;
-  display: block;
-  font-family: 'Roboto Slab', serif;
-}
-.updateButton{
-  height: 40px;
-  width: 150px;
-  padding: 6px 8px 6px 16px;
-  margin: 0 auto;
-  color: 'gray';
-  display: block;
-  font-family: 'Roboto Slab', serif;
-}
-#credit {
-  display: block;
-  color: black;
-  bottom: 0;
-  left: 0;
-  font-size: 12px;
-  padding-bottom: 50px;
-  padding-left: 20px;
-  text-decoration: none;
-  position: absolute;
-  font-family: 'Roboto Slab', serif;
-}
-#instruction{
-  display: block;
-  color: black;
-  font-size: 20px;
-  margin-top: 30px;
-  padding: 6px 8px 6px 16px;
-  font-family: 'Roboto Slab', serif;
-}
-
-
-/*graph and results display*/
-#result {
-  height: 30px;
-  width: 200px;
-  padding-top: 8px;
-  margin: 0 auto;
-  margin-top: 20px;
-  font-size: 20px;
-  border: 1px solid black;
+  font-size: 30px;
   text-align: center;
-  background: '';
-  border-radius: 5%;
-  box-shadow: 0 0 10px black;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Nerko One', cursive;
+  color: #9bb0b0;
 }
-#graphContainer {
-	position: relative;
-	height: 40vh;
-	width: 50vw;
-	margin: 0 auto;
-  margin-top: 20px;
-	background: lightblue;
-  border-radius: 5%;
-  border: 5px solid black;
-  box-shadow: 0 0 10px black;
-  font-family: 'Roboto Slab', serif;
-}
-
-/*Dictionary Display options*/
-#dictWrap {
-  height: 300px;
-  width: 600px;
+#message {
+  height: 5vh;
+  width: 150px;
+  text-align: center;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 3vw;
+  font-size: 35px;
+  font-family: 'Nerko One', cursive;
+  color: #9bb0b0;
+}
+#projects {
+  height: 50vh;
+  width: 100vw;
+  margin-top: 100px;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  position: absolute;
 }
-#dictTitle {
-  margin-top: 30px;
-  font-size: 25px;
+.project {
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+  margin-top: 4vw;
+  padding: 5px;
+  position: relative;
+  background-color: #9bb0b0;
   text-align: center;
-  font-family: 'Roboto Slab', serif;
-}
-#posDict {
-  height: 250px;
-  width: 250px;
-  margin: 25px;
-  border: 1px solid black;
+  font-size: 20px;
   border-radius: 10%;
-  overflow-wrap: anywhere;
-  background: #b3d4ab;
-  padding: 10px;
-  box-shadow: 0 0 10px black;
-  font-size: 15px;
-  font-family: 'Roboto Slab', serif; 
+  box-shadow: 0 5px 10px #000;
+  color: #000;
+  text-decoration: none;
 }
-#negDict {
-  height: 250px;
-  width: 250px;
-  margin: 25px;
-  border-radius: 10%;
-  border: 1px solid black;
-  overflow-wrap: anywhere;
-  background: #d4abab;
-  padding: 10px;
-  font-size: 15px;
-  box-shadow: 0 0 10px black;
-  font-family: 'Roboto Slab', serif;
+.project:hover {
+  animation: enlarge 1s forwards;
 }
-
-#refreshButton {
-  display: none;
-  font-family: 'Roboto Slab', serif;
+#project1 {
+  background-image: url("https://assets.codepen.io/4332848/CryptoSentiment.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
-
-@media screen and (max-width: 800px) {
-  .sidenav {display: none;}
-  .sidenav a {display: none;}
-  #dictTitle {display: none;}
-  #dictWrap {display: none;}
-  #graphContainer {width: 90vw;}
-  #refreshButton {  
-  height: 50px;
-  width: 150px;
-  padding: 6px 8px 6px 16px;
-  margin-top: 20px;
+#project2 {
+  background-image: url("https://assets.codepen.io/4332848/CSS_Spheres.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#project3 {
+  background-image: url("https://assets.codepen.io/4332848/birthdayCard.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#project4 {
+  background-image: url("https://assets.codepen.io/4332848/3dPhotoDemo.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#objectives {
+  height: 20vw;
+  width: 80vw;
   margin: 0 auto;
-  color: 'gray';
-  display: block;
+  margin-top: 100px;
+  border: 1px solid #000;
+}
+#contact {
+  height: 5vw;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 100px;
+  border: 1px solid #000;
+}
+#end {
+  float: right;
+  padding: 10px;
+  color: #000;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .container {
+  padding-top: 60px;
+}
+#navbar a:hover {
+  color: #2c8e91;
+  animation: enlarge 1s forwards;
+}
+@-moz-keyframes enlarge {
+  0% {
+    transform: scale(1);
   }
-  body{width: 100%;}
+  100% {
+    transform: scale(1.1);
+    border-radius: 50%;
+  }
+}
+@-webkit-keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+    border-radius: 50%;
+  }
+}
+@-o-keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+    border-radius: 50%;
+  }
+}
+@keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+    border-radius: 50%;
+  }
 }
