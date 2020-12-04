@@ -30,6 +30,7 @@ body {
   background-color: lightblue;
   overflow-x: hidden;
   padding-top: 20px;
+  box-shadow: 0 0 10px black;
 }
 .sidenav a{
   padding: 6px 8px 6px 16px;
@@ -66,31 +67,6 @@ body {
 }
 
 
-/*Dictionary Display*/
-#dictWrap {
-  height: 100px;
-  width: 100vw;
-  margin: 20px;
-}
-#posDict {
-  height: 100px;
-  width: 350px;
-  margin-top: 20px;
-  border: 1px solid black;
-  background: #b7d4ab;
-  padding: 10px;
-  font-size: 15px;
-}
-#negDict {
-  height: 100px;
-  width: 350px;
-  margin-top: 20px;
-  border: 1px solid black;
-  background: #d4abab;
-  padding: 10px;
-  font-size: 15px;
-}
-
 /*graph and results display*/
 #result {
   height: 30px;
@@ -103,6 +79,7 @@ body {
   text-align: center;
   background: '';
   border-radius: 5%;
+  box-shadow: 0 0 10px black;
 }
 #graphContainer {
 	position: relative;
@@ -113,6 +90,7 @@ body {
 	background: lightblue;
   border-radius: 5%;
   border: 5px solid black;
+  box-shadow: 0 0 10px black;
 }
 
 /*Dictionary Display options*/
@@ -136,6 +114,11 @@ body {
   border: 1px solid black;
   border-radius: 10%;
   overflow-wrap: anywhere;
+  background: #b3d4ab;
+  padding: 10px;
+  box-shadow: 0 0 10px black;
+  font-size: 15px;
+   
 }
 #negDict {
   height: 250px;
@@ -144,10 +127,16 @@ body {
   border-radius: 10%;
   border: 1px solid black;
   overflow-wrap: anywhere;
+  background: #d4abab;
+  padding: 10px;
+  font-size: 15px;
+  box-shadow: 0 0 10px black;
 }
+
 #refreshButton {
   display: none;
 }
+
 @media screen and (max-width: 800px) {
   .sidenav {display: none;}
   .sidenav a {display: none;}
