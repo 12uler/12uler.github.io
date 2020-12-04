@@ -9,25 +9,44 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 </head>
-
+	
+  <!--Side bar-->
+  
+<div class="sidenav">
+  <a>Crypto Feel</a>
+  <a id="instruction">Use your own keywords here. Press update to apply changes.</a>
+  <button class="updateButton" id="enterPosKey">Positive words</button>
+  
+  <button class="updateButton" id="enterNegKey">Negative words</button>
+  <button class="updateButton" id="updateButton" type="reset" value="Reload">Update</button>
+  <div id="credit">Created by</br>
+  Jason Piatt 2020</div>
+	
+</div>
+  
 <body>
 
 <title id="title">Crypto Sentiment Chart</title>
-
-<h4>Market Sentiment Analysis</h4>
-
-<h5>None of this content represents me or my opinions.  Sourced from the 4chan api. https://a.4cdn.org/biz/10.json</h5>
-
-<h5>Method: Pull JSON from 4chan and filter comments for keywords indicating positive or negative feelings toward current market trends. </h5>
-
+ <!--Main body items. Graph and title area-->
+  
+<div id="title">Market Sentiment Analysis
+  <div id="disclaimer">Current data sourced from 4chan.org/biz/10.json </div>
+  </div>
+  
+<div id="result"></div>
+  
 <div id="graphContainer">
 	<canvas id="graph"></canvas>
 </div>
-<div id="result"></div>
-<div class="comments" id="comments"></div>
-	
-<script src="main.js"></script>
-	
+  
+  
+<div id="dictTitle">Current Active Dictionaries</div>
+  
+     <div id="dictWrap">
+      <div id="posDict"></div>
+      <div id="negDict"></div> 
+    </div>
+
 </body>
 
 </html>
