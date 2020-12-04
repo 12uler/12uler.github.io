@@ -79,18 +79,18 @@ body {
   text-align: center;
   background: '';
   border-radius: 5%;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 5px black;
 }
 #graphContainer {
-	position: relative;
-	height: 40vh;
-	width: 50vw;
-	margin: 0 auto;
+  position: relative;
+  height: 400px;
+  width: 600px;
+  margin: 0 auto;
   margin-top: 20px;
-	background: lightblue;
+  background: lightblue;
   border-radius: 5%;
   border: 5px solid black;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 5px black;
 }
 
 /*Dictionary Display options*/
@@ -116,7 +116,7 @@ body {
   overflow-wrap: anywhere;
   background: #b3d4ab;
   padding: 10px;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 5px black;
   font-size: 15px;
    
 }
@@ -130,7 +130,7 @@ body {
   background: #d4abab;
   padding: 10px;
   font-size: 15px;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 5px black;
 }
 
 #refreshButton {
