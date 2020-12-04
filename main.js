@@ -1,17 +1,20 @@
 //https://cors-anywhere.herokuapp.com/https://a.4cdn.org/biz/10.json
-//https://cors-anywhere.herokuapp.com/https://a.4cdn.org/biz/10.json
+
+
+//Initializing
 $(document).ready(function() {
+    
 var newPosEntry = $('#posUserKeywords').text(),
     newNegEntry = $('#negUserKeywords').text();
   
-var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "gonna make it", "make it", "waiting room", "pump", "pump it", "whale", "linker", "no linker", "link marines", "rally", "comfy", "space mission"],
-    
+var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "gonna make it", "make it", "waiting room", "pump", "pump it", "whale", "linker", "no linker", "link marines", "rally", "comfy", "space mission"], 
   negDict = ["pink wojack", "crash", "bobo", "red", "fud", "bear", "dump", "ahhhhhh", "ahhhhhhhh","aaaaaaaaahhhhhhhhhhhhh", "weak hands", "broke", "losses", "loss", "stinkers", "stinker", "buy the dip", "short", "reversal"]; 
 
-  function getComments(){
+function getComments(){
+    
 $.getJSON("https://cors-anywhere.herokuapp.com/https://a.4cdn.org/biz/10.json",
-          
 function(getData){
+    
 var rawComments = [],  
 ctx = document.getElementById('graph').getContext('2d');
   
@@ -35,6 +38,7 @@ function checkNeg(value){
 };
 
 //filter comments
+    
 var posComments = comments.filter(checkPos),
  negComments = comments.filter(checkNeg),
  posData = posComments.length,
@@ -43,7 +47,8 @@ console.log(posComments.length);
 console.log(negComments.length);
  
 //document.getElementById('comments').innerHTML = negComments;
- //build the graph
+//build the graph
+    
  var chart = new Chart(ctx, {
   type: 'bar',
   responsive: true,
@@ -70,8 +75,8 @@ console.log(negComments.length);
    }
 }); 
 
-    //Positive or Negative? 
-
+//Positive or Negative? Report.
+    
 if(posData>negData){
     return $('#result').text("Positive Sentiment"),
     $('#result').css("background-color", "green");
@@ -83,7 +88,7 @@ if(posData>negData){
      $('#result').css("background-color", "gray");;
   }  
  
-});  //JSON sort function end 
+}); //JSON sort function end 
     
 $('#posDict').text(posDict);
 $('#negDict').text(negDict);    
@@ -91,8 +96,11 @@ $('#negDict').text(negDict);
  console.log(negDict);
 } 
  
+//onclick events and updating the dictionaries with user input
+    
 $('#updateButton').on('click', getComments); //Click to reload button   
-
+$('#refreshButton').on('click', getComments); //Refresh button for phones
+    
 $('#enterPosKey').on('click', function(){
     let newWords = prompt("Input Keywords. Ex: yay, great, pump");
     if(newWords != null){
