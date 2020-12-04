@@ -41,6 +41,7 @@ body {
   padding-top: 20px;
   box-shadow: 0 0 10px black;
   font-family: 'Roboto Slab', serif;
+  opacity: 0.8;
 }
 .sidenav a{
   padding: 6px 8px 6px 16px;
