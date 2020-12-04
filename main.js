@@ -102,6 +102,7 @@ $('#enterPosKey').on('click', function(){
       posDict.push(tempArr[i]);
       }
     }
+    getComments();
     console.log(posDict);
   });
   
@@ -114,6 +115,7 @@ $('#enterPosKey').on('click', function(){
       negDict.push(tempArr[i]);
       }
     }
+     getComments();
     console.log(negDict);
   });
   
