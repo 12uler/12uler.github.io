@@ -14,7 +14,7 @@ var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "gonna mak
 
 function getComments(){
     
-$.getJSON("https://cors-anywhere.herokuapp.com/https://a.4cdn.org/biz/10.json",
+$.getJSON("https://cors-anywhere.herokuapp.com/https://a.4cdn.org/biz/9.json",
 function(getData){
     
 var rawComments = [],  
