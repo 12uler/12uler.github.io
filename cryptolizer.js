@@ -19,8 +19,9 @@ function(getData){
     
 var rawComments = [],  
 ctx = document.getElementById('graph').getContext('2d');
-  
-for(let x = 0; x < 14; x++) {
+    
+  //x = 14 is number of threads available in JSON page 10
+for(let x = 0; x < 14; x++) {  
   for (let i = 0; i < getData.threads[x].posts.length; i++)
      {
 rawComments.push(getData.threads[x].posts[i].com);
