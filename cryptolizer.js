@@ -72,10 +72,6 @@ for(let i=0; i<comments.length; i++){
   for(let x=0; x<negTimeIndex.length; x++){
     negTimeData.push(times[negTimeIndex[x]]);
   }
-console.log(posTimeIndex);
-console.log(negTimeIndex);
-console.log(posTimeData);
-console.log(negTimeData);
   
   
 //filter comments
@@ -85,6 +81,7 @@ var posComments = comments.filter(checkPos),
  negData = negComments.length,
  timeData;
     
+//Determine X scale for line graph
 if(posTimeData.length > negTimeData.length){
     timeData = posTimeData;
 } else {
@@ -94,9 +91,8 @@ if(posTimeData.length > negTimeData.length){
 timeData.sort();
 console.log(timeData);
     
-//document.getElementById('comments').innerHTML = negComments;
-  
- //build the graph
+    
+ //build the graphs
  var chart = new Chart(ctx, {
   type: 'bar',
   responsive: true,
@@ -175,16 +171,16 @@ if(posData>negData){
     return $('#result').text("No Change"),
      $('#result').css("background-color", "gray");
   }
+    
 });  //JSON sort function end 
     
+//set dictionary text to html
 $('#posDict').text(posDict);
 $('#negDict').text(negDict);    
- console.log(posDict);
- console.log(negDict);
 } 
  
-  //onclick events for updating data
   
+//onclick events for updating keyword data on user input
 $('#updateButton').on('click', getComments); //Click to reload button   
 $('#refreshButton').on('click', getComments); //Refresh button for phones
   
