@@ -8,9 +8,9 @@ var newPosEntry = $('#posUserKeywords').text(),
     newNegEntry = $('#negUserKeywords').text();
   
 var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "gonna make it", "make it", "waiting room", "pump", "pump it", "whale", "linker",
-               "no linker", "link marines", "rally", "comfy", "space mission", "mansion", "lambo", "ath", "all time high"], 
+               "no linker", "link marines", "rally", "comfy", "space mission", "mansion", "lambo", "ath", "all time high", "long"], 
   negDict = ["pink wojack", "crash", "bobo", "red", "fud", "bear", "bearish", "dump", "ahhhhhh", "ahhhhhhhh","aaaaaaaaahhhhhhhhhhhhh", "weak hands", "broke", "losses",
-             "loss", "stinkers", "dump it", "dip", "buy the dip", "short", "reversal", "tether up", "tether", "break down", "fud", "sell", "bottom"]; 
+             "loss", "stinkers", "dump it", "dip", "buy the dip", "short", "reversal", "tether up", "tether", "break down", "fud", "sell", "bottom", "short"]; 
 
 function getComments(){
     
