@@ -212,7 +212,7 @@ body {
   border-radius: 5%;
   box-shadow: 0 0 5px black;
 }
-#graphContainer {
+.graphContainer {
   position: relative;
   height: 400px;
   width: 600px;
@@ -271,9 +271,9 @@ body {
 @media screen and (max-width: 800px) {
   .sidenav {display: none;}
   .sidenav a {display: none;}
+  .graphContainer {width: 90vw;}
   #dictTitle {display: none;}
   #dictWrap {display: none;}
-  #graphContainer {width: 90vw;}
   #refreshButton {  
   height: 50px;
   width: 150px;
