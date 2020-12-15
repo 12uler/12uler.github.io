@@ -1,15 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-
-/* general declarations*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 body {
-  background: url('https://12uler.github.io/robert-ritchie-iUnebsZ6GZg-unsplash.jpg');
+  background: url("https://assets.codepen.io/4332848/starry_green_night.jpg");
   width: 110%;
   background-size: 100%;
   background-position: center;
-  background-attachment: fixed;	
+  background-attachment: fixed;
 }
-
-/*Title area*/
 #disclaimer {
   height: 25px;
   width: 300px;
@@ -23,66 +19,51 @@ body {
   margin: 0 auto;
   margin-top: 20px;
   font-size: 25px;
-  color: lightblue;
-  font-family: 'Roboto Slab', serif;
+  color: #add8e6;
+  font-family: 'Robot Slab', serif;
 }
-
-
-/*Sidebar Elements*/
 .sidenav {
   height: 100%;
   width: 160px;
   position: fixed;
   z-index: 1;
-  top:0;
-  left:0;
-  background-color: lightblue;
+  top: 0;
+  left: 0;
+  background-color: #add8e6;
   overflow-x: hidden;
   padding-top: 20px;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px #000;
   font-family: 'Roboto Slab', serif;
   opacity: 0.9;
 }
-.sidenav a{
+.sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: gray;
+  color: #808080;
   display: block;
   font-family: 'Roboto Slab', serif;
 }
-.updateButton{
+.updateButton {
   height: 40px;
   width: 150px;
   padding: 6px 8px 6px 16px;
   margin: 0 auto;
   color: 'gray';
   display: block;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Robot Slab', serif;
 }
 #credit {
   display: block;
-  color: black;
+  color: #000;
   bottom: 0;
   left: 0;
   font-size: 12px;
-  padding-bottom: 50px;
   padding-left: 20px;
   text-decoration: none;
   position: absolute;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Robot Slab', serif;
 }
-#instruction{
-  display: block;
-  color: black;
-  font-size: 20px;
-  margin-top: 0px;
-  padding: 6px 8px 6px 16px;
-  font-family: 'Roboto Slab', serif;
-}
-
-
-/*graph and results display*/
 #result {
   height: 30px;
   width: 200px;
@@ -90,127 +71,12 @@ body {
   margin: 0 auto;
   margin-top: 20px;
   font-size: 20px;
-  border: 1px solid black;
+  border: 1px solid #000;
   text-align: center;
   background: '';
   border-radius: 5%;
-  box-shadow: 0 0 5px black;
-  font-family: 'Roboto Slab', serif;
-}
-#graphContainer {
-	position: relative;
-	height: 400px;
-	width: 600px;
-	margin: 0 auto;
-  margin-top: 20px;
-	background: lightblue;
-  border-radius: 5%;
-  border: 5px solid black;
-  box-shadow: 0 0 5px black;
-  font-family: 'Roboto Slab', serif;
-}
-
-/*Dictionary Display options*/
-#dictWrap {
-  height: 300px;
-  width: 600px;
-  margin: 0 auto;
-  margin-top: 20px;
-  display: flex;
-  flex-flow: column wrap;
-}
-#dictTitle {
-  margin-top: 30px;
-  font-size: 25px;
-  text-align: center;
-  color: lightblue;
-  font-family: 'Roboto Slab', serif;
-}
-#posDict {
-  height: 250px;
-  width: 250px;
-  margin: 25px;
-  border: 1px solid black;
-  border-radius: 10%;
-  overflow-wrap: anywhere;
-  background: #b3d4ab;
-  padding: 10px;
-  box-shadow: 0 0 5px black;
-  font-size: 15px;
-  font-family: 'Roboto Slab', serif; 
-}
-#negDict {
-  height: 250px;
-  width: 250px;
-  margin: 25px;
-  border-radius: 10%;
-  border: 1px solid black;
-  overflow-wrap: anywhere;
-  background: #d4abab;
-  padding: 10px;
-  font-size: 15px;
-  box-shadow: 0 0 5px black;
-  font-family: 'Roboto Slab', serif;
-}
-
-#refreshButton {
-  display: none;
-  font-family: 'Roboto Slab', serif;
-}
-
-@media screen and (max-width: 850px) {
-  .sidenav {display: none;}
-  .sidenav a {display: none;}
-  #dictTitle {display: none;}
-  #dictWrap {display: none;}
-  #graphContainer {width: 90vw;}
-  #refreshButton {  
-  height: 50px;
-  width: 150px;
-  padding: 6px 8px 6px 16px;
-  margin-top: 20px;
-  margin: 0 auto;
-  color: 'gray';
-  display: block;
-  }
-  body{width: 100%;}
-}
-  color: 'gray';
-  display: block;
-}
-#credit {
-  display: block;
-  color: black;
-  bottom: 0;
-  left: 0;
-  font-size: 15px;
-  padding-bottom: 50px;
-  padding-left: 20px;
-  text-decoration: none;
-  position: absolute;
-}
-#instruction{
-  display: block;
-  color: black;
-  font-size: 20px;
-  margin-top: 30px;
-  padding: 6px 8px 6px 16px;
-}
-
-
-/*graph and results display*/
-#result {
-  height: 30px;
-  width: 200px;
-  padding-top: 8px;
-  margin: 0 auto;
-  margin-top: 20px;
-  font-size: 20px;
-  border: 1px solid black;
-  text-align: center;
-  background: '';
-  border-radius: 5%;
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px #000;
+  font-family: 'Robot Slab', serif;
 }
 .graphContainer {
   position: relative;
@@ -218,13 +84,12 @@ body {
   width: 600px;
   margin: 0 auto;
   margin-top: 20px;
-  background: lightblue;
+  background: #add8e6;
   border-radius: 5%;
-  border: 5px solid black;
-  box-shadow: 0 0 5px black;
+  border: 5px solid #000;
+  box-shadow: 0 0 5px #000;
+  font-family: 'Roboto Slab', serif;
 }
-
-/*Dictionary Display options*/
 #dictWrap {
   height: 300px;
   width: 600px;
@@ -237,51 +102,67 @@ body {
   margin-top: 30px;
   font-size: 25px;
   text-align: center;
+  color: #add8e6;
+  font-family: 'Roboto Slab', serif;
 }
 #posDict {
   height: 250px;
   width: 250px;
   margin: 25px;
-  border: 1px solid black;
+  border: 1px solid #000;
   border-radius: 10%;
   overflow-wrap: anywhere;
   background: #b3d4ab;
   padding: 10px;
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px #000;
   font-size: 15px;
-   
+  font-family: 'Roboto Slab', serif;
 }
 #negDict {
   height: 250px;
   width: 250px;
   margin: 25px;
+  border: 1px solid #000;
   border-radius: 10%;
-  border: 1px solid black;
   overflow-wrap: anywhere;
   background: #d4abab;
   padding: 10px;
+  box-shadow: 0 0 5px #000;
   font-size: 15px;
-  box-shadow: 0 0 5px black;
+  font-family: 'Roboto Slab', serif;
 }
-
 #refreshButton {
   display: none;
+  font-family: 'Roboto Slab', serif;
 }
 
-@media screen and (max-width: 800px) {
-  .sidenav {display: none;}
-  .sidenav a {display: none;}
-  .graphContainer {width: 90vw;}
-  #dictTitle {display: none;}
-  #dictWrap {display: none;}
-  #refreshButton {  
-  height: 50px;
-  width: 150px;
-  padding: 6px 8px 6px 16px;
-  margin-top: 20px;
-  margin: 0 auto;
-  color: 'gray';
-  display: block;
+@media screen and (max-width: 850px) {
+  .sidenav {
+    display: none;
   }
-  body{width: 100%;}
+  .sidenav a {
+    display: none;
+  }
+  #dictTitle {
+    display: none;
+  }
+  #dictWrap {
+    display: none;
+  }
+  .graphContainer {
+    width: 90vw;
+    height: 50vh;
+  }
+  #refreshButton {
+    height: 50px;
+    width: 150px;
+    padding: 6px 8px 6px 16px;
+    margin-top: 20px;
+    margin: 0 auto;
+    color: 'gray';
+    display: block;
+  }
+  body {
+    width: 100%;
+  }
 }
