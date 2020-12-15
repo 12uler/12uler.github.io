@@ -1,36 +1,40 @@
 //https://cors-anywhere.herokuapp.com/https://a.4cdn.org/biz/10.json
+//This script loads the JSON data, parses it for comments and timestamps, searches the comments for keywords, then outputs the results to graphs. 
 
-
-//Initializing
 $(document).ready(function() {
-    
 var newPosEntry = $('#posUserKeywords').text(),
     newNegEntry = $('#negUserKeywords').text();
   
-var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "gonna make it", "make it", "waiting room", "pump", "pump it", "whale", "linker",
-               "no linker", "link marines", "rally", "comfy", "space mission", "mansion", "lambo", "ath", "all time high", "long"], 
-  negDict = ["pink wojack", "crash", "bobo", "red", "fud", "bear", "bearish", "dump", "ahhhhhh", "ahhhhhhhh","aaaaaaaaahhhhhhhhhhhhh", "weak hands", "broke", "losses",
-             "loss", "stinkers", "dump it", "dip", "buy the dip", "short", "reversal", "tether up", "tether", "break down", "fud", "sell", "bottom", "short"]; 
+var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "gonna make it", "make it", "waiting room", "pump", "pump it", "whale", "linker", "no linker", "link marines", "rally", "comfy", "space mission"],
+    
+  negDict = ["pink wojack", "crash", "bobo", "red", "fud", "bear", "dump", "ahhhhhh", "ahhhhhhhh","aaaaaaaaahhhhhhhhhhhhh", "weak hands", "broke", "losses", "loss", "stinkers", "stinker", "buy the dip", "short", "reversal"]; 
 
-function getComments(){
-    
+  function getComments(){
 $.getJSON("https://cors-anywhere.herokuapp.com/https://a.4cdn.org/biz/10.json",
+          
 function(getData){
-    
-var rawComments = [],  
-ctx = document.getElementById('graph').getContext('2d');
-    
-  //x = 14 is number of threads available in JSON page 10
-for(let x = 0; x < 14; x++) {  
+var rawComments = [],
+    rawTimes = [],
+ctx = document.getElementById('barGraph').getContext('2d'),
+ctx2 = document.getElementById('lineGraph').getContext('2d');
+
+for(let x = 0; x < 14; x++) {
   for (let i = 0; i < getData.threads[x].posts.length; i++)
      {
-rawComments.push(getData.threads[x].posts[i].com);
+rawComments.push(getData.threads[x].posts[i].com);    rawTimes.push(getData.threads[x].posts[i].now);
      }
    }
  
 //raw comments refinement to lowercase
 var comments = rawComments.join('|').toLowerCase().split('|');
+var times = [];
+for(var i = 0; i < rawTimes.length; i++){
+  let time = rawTimes[i].substring(13,21);
+  let tempArray = time.split(':').join('');
+  times.push(parseInt(tempArray, 10));
+}
   
+console.log(times);
 //filter functions
 function checkPos(val){
   return posDict.every(function(v){return val.indexOf(v) == -1 });
@@ -39,18 +43,55 @@ function checkPos(val){
 function checkNeg(value){
   return negDict.every(function(z){return value.indexOf(z) == -1 });
 };
-
+  
+  
+  //Sort times of successful comment keyword match. 
+var posTimeIndex = [],
+    negTimeIndex = [],
+    posTimeData = [],
+    negTimeData = [];
+  
+for(let i=0; i<comments.length; i++){
+  for(let x=0;x<posDict.length; x++){
+    if(comments[i].includes(posDict[x])){
+    posTimeIndex.push(i);
+    } //posTimeIndex.push(comments.findIndex(dict => dict == posDict[x]));  
+  }
+}
+  for(let x=0; x<posTimeIndex.length; x++){
+    posTimeData.push(times[posTimeIndex[x]]);
+  }
+  
+for(let i=0; i<comments.length; i++){
+  for(let x=0;x<negDict.length; x++){
+    if(comments[i].includes(negDict[x])){
+    negTimeIndex.push(i); 
+    } //posTimeIndex.push(comments.findIndex(dict => dict == posDict[x]));  
+  }
+}
+  for(let x=0; x<negTimeIndex.length; x++){
+    negTimeData.push(times[negTimeIndex[x]]);
+  }
+console.log(posTimeIndex);
+console.log(negTimeIndex);
+console.log(posTimeData);
+console.log(negTimeData);
+  
+  
 //filter comments
-    
 var posComments = comments.filter(checkPos),
  negComments = comments.filter(checkNeg),
  posData = posComments.length,
- negData = negComments.length;
+ negData = negComments.length,
+ timeData = posTimeData.concat(negTimeData);
+  timeData.sort();
+  
 console.log(posComments.length);
 console.log(negComments.length);
- 
-//build the graph
-    
+  console.log(timeData);
+//document.getElementById('comments').innerHTML = negComments;
+  
+ //build the graph
  var chart = new Chart(ctx, {
   type: 'bar',
   responsive: true,
@@ -60,7 +101,7 @@ console.log(negComments.length);
     datasets: [{
       barPercentage: 0.5,
       label: '4chan/biz Market Sentiment Analysis',
-      backgroundColor: ['lightgreen', 'tomato'],
+      backgroundColor: ['#56e31e', 'tomato'],
       borderColor: ['green','red'],
       data: [posData, negData],
     }]
@@ -77,34 +118,71 @@ console.log(negComments.length);
      maintainAspectRatio: false
    }
 }); 
+  
+var lineChart = new Chart(ctx2, {
+  type: 'line',
+  data: {
+    labels: timeData,
+    datasets: [{
+    label: 'Positive Posts',
+    borderColor: 'green',
+    borderWidth: 2,
+    data: posTimeIndex
+  },
+  {
+  label: 'Negative Posts',
+  borderColor: 'red',
+  borderWidth: 2,
+    data: negTimeIndex
+  }],
+  },
+  options: {
+    title: {
+      text: 'Post Time Frequency'
+    },
+   scales: {
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'post'
+        }
+      }],
+      xAxes: [{
+        scaleLabel:{
+          display: true,
+          labelString: 'Time'
+        }
+      }],
+    },
+    maintainAspectRatio: false
+  }
+});
 
-//Positive or Negative? Report.
-    
+  
+//Positive or Negative? 
 if(posData>negData){
-    return $('#result').text("Positive Sentiment"),
+    return $('#result').text("Positive"),
     $('#result').css("background-color", "#56e31e");
   } else if (negData > posData){
-    return $('#result').text("Negative Sentiment"),
+    return $('#result').text("Negative"),
      $('#result').css("background-color", "tomato");
-  } else {
-    return $('#result').text("Neutral"),
-     $('#result').css("background-color", "gray");;
-  }  
- 
-}); //JSON sort function end 
+  }  else {
+    return $('#result').text("No Change"),
+     $('#result').css("background-color", "gray");
+  }
+});  //JSON sort function end 
     
-//Dispaly active dictionaries on page
 $('#posDict').text(posDict);
 $('#negDict').text(negDict);    
  console.log(posDict);
  console.log(negDict);
 } 
  
-//onclick events and updating the dictionaries with user input
-    
+  //onclick events for updating data
+  
 $('#updateButton').on('click', getComments); //Click to reload button   
 $('#refreshButton').on('click', getComments); //Refresh button for phones
-    
+  
 $('#enterPosKey').on('click', function(){
     let newWords = prompt("Input Keywords. Ex: yay, great, pump");
     if(newWords != null){
@@ -114,7 +192,7 @@ $('#enterPosKey').on('click', function(){
       posDict.push(tempArr[i]);
       }
     }
-    getComments();
+  getComments();
     console.log(posDict);
   });
   
@@ -127,11 +205,10 @@ $('#enterPosKey').on('click', function(){
       negDict.push(tempArr[i]);
       }
     }
-     getComments();
+   getComments();
     console.log(negDict);
   });
   
  getComments(); 
-  
-}); //doc on ready func end
 
+}); //doc on ready func end
