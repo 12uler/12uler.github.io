@@ -36,6 +36,10 @@ body {
   font-family: 'Roboto Slab', serif;
   opacity: 0.9;
 }
+#instruction {
+ font-size: 30px;
+  color: 'black';
+}
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
