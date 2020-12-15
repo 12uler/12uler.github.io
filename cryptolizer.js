@@ -160,7 +160,7 @@ var lineChart = new Chart(ctx2, {
 });
 
   
-//Positive or Negative? 
+//Positive or Negative? Report results
 if(posData>negData){
     return $('#result').text("Positive"),
     $('#result').css("background-color", "#56e31e");
@@ -168,7 +168,7 @@ if(posData>negData){
     return $('#result').text("Negative"),
      $('#result').css("background-color", "tomato");
   }  else {
-    return $('#result').text("No Change"),
+    return $('#result').text("Neutral"),
      $('#result').css("background-color", "gray");
   }
     
