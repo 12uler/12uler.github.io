@@ -83,12 +83,17 @@ var posComments = comments.filter(checkPos),
  negComments = comments.filter(checkNeg),
  posData = posComments.length,
  negData = negComments.length,
- timeData = posTimeData.concat(negTimeData);
-  timeData.sort();
-  
-console.log(posComments.length);
-console.log(negComments.length);
-  console.log(timeData);
+ timeData;
+    
+if(posTimeData.length > negTimeData.length){
+    timeData = posTimeData;
+} else {
+    timeData = negTimeData;
+}
+    
+timeData.sort();
+console.log(timeData);
+    
 //document.getElementById('comments').innerHTML = negComments;
   
  //build the graph
