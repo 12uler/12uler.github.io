@@ -13,40 +13,25 @@
 	
 <!-- Sidebar Elements -->
 	
-<div class="sidenav">
-  	<a id="instruction">Add your own keywords here.</a>
-  	<button class="updateButton" id="enterPosKey">Positive words</button>
-  	<button class="updateButton" id="enterNegKey">Negative words</button>
-  	<button class="updateButton" id="updateButton" type="reset" value="Reload">Refresh</button>
-  	<div id="credit">Created by</br>Jason Piatt,</br>Nov 2020.</br>All rights reserved.</div>
+
+<div class="sidenav"><a id="instruction">Add your own keywords here</a>
+  <button class="updateButton" id="enterPosKey">Positive Keywords</button>
+  <button class="updateButton" id="enterNegKey">Negative Keywords</button>
+  <button class="updateButton" id="updateButton" type="reset" value="Refresh">Refresh</button>
+  <div id="credit">Created By Jason Piatt</div>
 </div>
-  
-<!--Main body items. Graph and title area-->
-
-<body>
-
-<title id="title">Crypto Sentiment</title>
-  
 <div id="title">Crypto Market Sentiment
-  <div id="disclaimer">Current data sourced from 4chan.org/biz/10.json </div>
-  </div>
-  
-<div id="result"></div>
-  
-<div class="graphContainer">
-	<canvas id="barGraph"></canvas>
+  <div id="disclaimer">Current data source from 4chan.org/biz/10.json</div>
 </div>
-  <button id="refreshButton">Refresh</button>
-  
-<!-- Dictionary Display -->
-	
+<div id="result"></div>
+<div class="graphContainer">
+  <canvas id="barGraph"></canvas>
+</div>
 <div id="dictTitle">Current Active Dictionaries</div>
-  
-    <div id="dictWrap">
-      <div id="posDict"></div>
-      <div id="negDict"></div> 
-    </div>
-	
+<div id="dictWrap">
+  <div id="posDict"></div>
+  <div id="negDict"></div>
+</div>
 <div class="graphContainer">
   <canvas id="lineGraph"></canvas>
 </div>
