@@ -125,13 +125,13 @@ var lineChart = new Chart(ctx2, {
   data: {
     labels: timeData,
     datasets: [{
-    label: 'Positive Posts',
+    label: 'Positive Post',
     borderColor: 'green',
     borderWidth: 2,
     data: posTimeIndex
   },
   {
-  label: 'Negative Posts',
+  label: 'Negative Post',
   borderColor: 'red',
   borderWidth: 2,
     data: negTimeIndex
@@ -145,7 +145,7 @@ var lineChart = new Chart(ctx2, {
       yAxes: [{
         scaleLabel: {
           display: true,
-          labelString: 'post'
+          labelString: 'Post Index #'
         }
       }],
       xAxes: [{
