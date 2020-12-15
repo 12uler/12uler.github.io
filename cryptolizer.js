@@ -34,7 +34,7 @@ for(var i = 0; i < rawTimes.length; i++){
   times.push(parseInt(tempArray, 10));
 }
   
-console.log(times);
+
 //filter functions
 function checkPos(val){
   return posDict.every(function(v){return val.indexOf(v) == -1 });
@@ -174,6 +174,7 @@ if(posData>negData){
     
 });  //JSON sort function end 
     
+      
 //set dictionary text to html
 $('#posDict').text(posDict);
 $('#negDict').text(negDict);    
@@ -194,7 +195,6 @@ $('#enterPosKey').on('click', function(){
       }
     }
   getComments();
-    console.log(posDict);
   });
   
  $('#enterNegKey').on('click', function(){
@@ -207,9 +207,8 @@ $('#enterPosKey').on('click', function(){
       }
     }
    getComments();
-    console.log(negDict);
   });
   
  getComments(); 
 
-}); //doc on ready func end
+}); //doc on ready end
