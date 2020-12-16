@@ -10,7 +10,7 @@ var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "gonna mak
   negDict = ["pink wojack", "crash", "bobo", "red", "fud", "bear", "dump", "ahhhhhh", "ahhhhhhhh","aaaaaaaaahhhhhhhhhhhhh", "weak hands", "broke", "losses", "loss", "stinkers", "stinker", "buy the dip", "short", "reversal", "short"]; 
 
   function getComments(){
-$.getJSON("https://a.4cdn.org/biz/10.json",
+$.getJSON("https://cors-anywhere.herokuapp.com/https://a.4cdn.org/biz/10.json",
           
 function(getData){
 var rawComments = [],
