@@ -34,19 +34,31 @@ for(var i = 0; i < rawTimes.length; i++){
   times.push(parseInt(tempArray, 10));
 }
   
+console.log(times);
 //filter functions
+  /*
+function checkPos(val){
+  return posDict.every((a)=>{return val.indexOf(a) == -1 });
+};
+
+function checkNeg(value){
+  return negDict.every((b)=>{return value.indexOf(b) == -1 });
+};
+  */
+  
+  //Sort times of successful comment keyword match. 
 var posTimeIndex = [],
     negTimeIndex = [],
-    posComments = [],
-    negComments = [],
     posTimeData = [],
-    negTimeData = [];
+    negTimeData = [],
+    posComments = [],
+    negComments = [];
   
 for(let i=0; i<comments.length; i++){
   for(let x=0;x<posDict.length; x++){
     if(comments[i].includes(posDict[x])){
     posTimeIndex.push(i);
-        posComments.push(comments[i];
+      posComments.push(comments[i]);
     } //posTimeIndex.push(comments.findIndex(dict => dict == posDict[x]));  
   }
 }
@@ -54,34 +66,37 @@ for(let i=0; i<comments.length; i++){
     posTimeData.push(times[posTimeIndex[x]]);
   }
   
+console.log(posComments[0]);
+  
 for(let i=0; i<comments.length; i++){
   for(let x=0;x<negDict.length; x++){
     if(comments[i].includes(negDict[x])){
     negTimeIndex.push(i); 
-        negComments.push(comments[i]);
+      negComments.push(comments[i]);
     } //posTimeIndex.push(comments.findIndex(dict => dict == posDict[x]));  
   }
 }
   for(let x=0; x<negTimeIndex.length; x++){
     negTimeData.push(times[negTimeIndex[x]]);
-  }
+  }  
+ console.log(negComments[0]);
   
 //filter comments
-var posData = posComments.length,
+var
+ posData = posComments.length,
  negData = negComments.length,
  timeData;
-    
-//Determine X scale for line graph
-if(posTimeData.length > negTimeData.length){
-    timeData = posTimeData;
-} else {
-    timeData = negTimeData;
-}
-    
+  
+ if (posTimeData.length > negTimeData.length){
+   timeData = posTimeData;
+ } else {
+   timeData = negTimeData;
+ } 
 timeData.sort();
 console.log(timeData);
-    
- //build the graphs
+//document.getElementById('comments').innerHTML = negComments;
+  
+ //build the graph
  var chart = new Chart(ctx, {
   type: 'bar',
   responsive: true,
@@ -114,13 +129,13 @@ var lineChart = new Chart(ctx2, {
   data: {
     labels: timeData,
     datasets: [{
-    label: 'Positive Post',
+    label: 'Positive Posts',
     borderColor: 'green',
     borderWidth: 2,
     data: posTimeIndex
   },
   {
-  label: 'Negative Post',
+  label: 'Negative Posts',
   borderColor: 'red',
   borderWidth: 2,
     data: negTimeIndex
@@ -134,7 +149,7 @@ var lineChart = new Chart(ctx2, {
       yAxes: [{
         scaleLabel: {
           display: true,
-          labelString: 'Post Index #'
+          labelString: 'post'
         }
       }],
       xAxes: [{
@@ -148,8 +163,7 @@ var lineChart = new Chart(ctx2, {
   }
 });
 
-  
-//Positive or Negative? Report results
+//Positive or Negative? 
 if(posData>negData){
     return $('#result').text("Positive"),
     $('#result').css("background-color", "#56e31e");
@@ -157,20 +171,18 @@ if(posData>negData){
     return $('#result').text("Negative"),
      $('#result').css("background-color", "tomato");
   }  else {
-    return $('#result').text("Neutral"),
+    return $('#result').text("No Change"),
      $('#result').css("background-color", "gray");
   }
-    
 });  //JSON sort function end 
     
-      
-//set dictionary text to html
 $('#posDict').text(posDict);
 $('#negDict').text(negDict);    
+ console.log(posDict);
+ console.log(negDict);
 } 
  
-  
-//onclick events for updating keyword data on user input
+//onclick events for updating data
 $('#updateButton').on('click', getComments); //Click to reload button   
 $('#refreshButton').on('click', getComments); //Refresh button for phones
   
@@ -184,6 +196,7 @@ $('#enterPosKey').on('click', function(){
       }
     }
   getComments();
+    console.log(posDict);
   });
   
  $('#enterNegKey').on('click', function(){
@@ -196,6 +209,7 @@ $('#enterPosKey').on('click', function(){
       }
     }
    getComments();
+    console.log(negDict);
   });
   
  getComments(); 
