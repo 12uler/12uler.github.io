@@ -34,20 +34,11 @@ for(var i = 0; i < rawTimes.length; i++){
   times.push(parseInt(tempArray, 10));
 }
   
-
 //filter functions
-function checkPos(val){
-  return posDict.every(function(v){return val.indexOf(v) == -1 });
-};
-
-function checkNeg(value){
-  return negDict.every(function(z){return value.indexOf(z) == -1 });
-};
-  
-  
-  //Sort times of successful comment keyword match. 
 var posTimeIndex = [],
     negTimeIndex = [],
+    posComments = [],
+    negComments = [],
     posTimeData = [],
     negTimeData = [];
   
@@ -55,6 +46,7 @@ for(let i=0; i<comments.length; i++){
   for(let x=0;x<posDict.length; x++){
     if(comments[i].includes(posDict[x])){
     posTimeIndex.push(i);
+        posComments.push(comments[i];
     } //posTimeIndex.push(comments.findIndex(dict => dict == posDict[x]));  
   }
 }
@@ -66,6 +58,7 @@ for(let i=0; i<comments.length; i++){
   for(let x=0;x<negDict.length; x++){
     if(comments[i].includes(negDict[x])){
     negTimeIndex.push(i); 
+        negComments.push(comments[i]);
     } //posTimeIndex.push(comments.findIndex(dict => dict == posDict[x]));  
   }
 }
@@ -73,11 +66,8 @@ for(let i=0; i<comments.length; i++){
     negTimeData.push(times[negTimeIndex[x]]);
   }
   
-  
 //filter comments
-var posComments = comments.filter(checkPos),
- negComments = comments.filter(checkNeg),
- posData = posComments.length,
+var posData = posComments.length,
  negData = negComments.length,
  timeData;
     
@@ -90,7 +80,6 @@ if(posTimeData.length > negTimeData.length){
     
 timeData.sort();
 console.log(timeData);
-    
     
  //build the graphs
  var chart = new Chart(ctx, {
