@@ -5,9 +5,9 @@ $(document).ready(function() {
 var newPosEntry = $('#posUserKeywords').text(),
     newNegEntry = $('#negUserKeywords').text();
   
-var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "gonna make it", "make it", "waiting room", "pump", "pump it", "whale", "linker", "no linker", "link marines", "rally", "comfy", "space mission", "long", "buy the dip", "accumulate", "accumulating"],
+var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "WTFWT", "gonna make it", "make it", "waiting room", "pump", "pump it", "pumping", "chad", "FOMO", "rally", "comfy", "WAGMI", "long", "buy the dip", "accumulate", "accumulating"],
     
-  negDict = ["pink wojack", "crash", "bobo", "red", "fud", "bear", "dump", "ahhhhhh", "ahhhhhhhh","aaaaaaaaahhhhhhhhhhhhh", "weak hands", "broke", "losses", "loss", "stinkers", "stinker", "buy the dip", "short", "reversal", "short", "cash out", "take profit"]; 
+  negDict = ["pink wojack", "crash", "bobo", "red", "fud", "fear", "bear", "bogged", "bulltrap", "dump", "lost everything", "ascending triangle", "ahhhhhh", "ahhhhhhhh","aaaaaaaaahhhhhhhhhhhhh", "weak hands", "broke", "losses", "loss", "rejected", "buy the dip", "reversal", "short", "cash out", "take profit"]; 
 
   function getComments(){
 $.getJSON("https://thingproxy.freeboard.io/fetch/https://a.4cdn.org/biz/10.json",
