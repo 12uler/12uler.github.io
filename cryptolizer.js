@@ -10,7 +10,7 @@ var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "WTFWT", "
   negDict = ["pink wojack", "crash", "bobo", "red", "fud", "fear", "bear", "bogged", "bulltrap", "dump", "lost everything", "ascending triangle", "ahhhhhh", "ahhhhhhhh","aaaaaaaaahhhhhhhhhhhhh", "weak hands", "broke", "losses", "loss", "rejected", "buy the dip", "reversal", "short", "cash out", "take profit"]; 
 
   function getComments(){
-$.getJSON("https://thingproxy.freeboard.io/fetch/https://a.4cdn.org/biz/10.json",
+$.getJSON("https://boards.4chan.org/biz/10.json",
           
 function(getData){
 var rawComments = [],
