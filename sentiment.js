@@ -10,8 +10,9 @@ var posDict = ["bull", "bullish", "moon", "miss out", "wtf was that", "WTFWT", "
     
   negDict = ["pink wojack", "crash", "bobo", "red", "fud", "fear", "bear", "bogged", "bulltrap", "dump", "lost everything", "ascending triangle", "ahhhhhh", "ahhhhhhhh","aaaaaaaaahhhhhhhhhhhhh", "weak hands", "broke", "losses", "loss", "rejected", "buy the dip", "reversal", "short", "cash out", "take profit"]; 
 
+//You can input your own json data here
   function getComments(){
-$.getJSON("https://12uler.github.io/biz.json",
+$.getJSON("https://12uler.github.io/example.json",
           
 function(getData){
 var rawComments = [],
