@@ -1,6 +1,7 @@
-//https://cors-anywhere.herokuapp.com/https://a.4cdn.org/biz/10.json
+
 //This script loads the JSON data, parses it for comments and timestamps, searches the comments for keywords, then outputs the results to graphs. 
 //The JSON currently being displayed is a test file. The cors proxy is no longer working. 
+//You should import your own JSON and dictionary to suit your needs. 
 
 $(document).ready(function() {
 var newPosEntry = $('#posUserKeywords').text(),
@@ -35,18 +36,6 @@ for(var i = 0; i < rawTimes.length; i++){
   let tempArray = time.split(':').join('');
   times.push(parseInt(tempArray, 10));
 }
-  
-console.log(times);
-//filter functions
-  /*
-function checkPos(val){
-  return posDict.every((a)=>{return val.indexOf(a) == -1 });
-};
-
-function checkNeg(value){
-  return negDict.every((b)=>{return value.indexOf(b) == -1 });
-};
-  */
   
   //Sort times of successful comment keyword match. 
 var posTimeIndex = [],
@@ -96,7 +85,6 @@ var
  } 
 timeData.sort();
 console.log(timeData);
-//document.getElementById('comments').innerHTML = negComments;
   
  //build the graph
  var chart = new Chart(ctx, {
@@ -216,4 +204,4 @@ $('#enterPosKey').on('click', function(){
   
  getComments(); 
 
-}); //doc on ready end
+}); 
