@@ -50,7 +50,7 @@ for(let i=0; i<comments.length; i++){
     if(comments[i].includes(posDict[x])){
     posTimeIndex.push(i);
       posComments.push(comments[i]);
-    } //posTimeIndex.push(comments.findIndex(dict => dict == posDict[x]));  
+    } 
   }
 }
   for(let x=0; x<posTimeIndex.length; x++){
@@ -64,7 +64,7 @@ for(let i=0; i<comments.length; i++){
     if(comments[i].includes(negDict[x])){
     negTimeIndex.push(i); 
       negComments.push(comments[i]);
-    } //posTimeIndex.push(comments.findIndex(dict => dict == posDict[x]));  
+    } 
   }
 }
   for(let x=0; x<negTimeIndex.length; x++){
